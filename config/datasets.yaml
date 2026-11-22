@@ -1,0 +1,185 @@
+registry_version: "1.0.0"
+registry_updated: "2026-11-22"
+datasets:
+  - id: aqua_plastic_waste
+    title: "AquaPlasticWaste 2026 — Dal Lake drone imagery"
+    provider: "Mendeley Data"
+    landing_url: "https://data.mendeley.com/datasets/zshjxgfmc3/1"
+    download_url: null
+    doi: null
+    geography: ["Dal Lake, Srinagar, Jammu and Kashmir, India"]
+    modality: "drone_rgb"
+    target: "floating_macroplastic"
+    annotation: ["COCO polygon segmentation", "YOLO segmentation"]
+    reported_size: "5,000 images; 30,166 polygon instances (catalogue description; verify after download)"
+    licence_status: "verify"
+    licence: null
+    access: "landing_page_manual_download"
+    priority: 1
+    notes: "India freshwater imagery. Verify provider terms, exact counts, class map and whether images overlap other Dal Lake releases."
+  - id: flowpdw
+    title: "FloPWD — Floating Plastic Waste Dataset, Version 2"
+    provider: "Mendeley Data"
+    landing_url: "https://data.mendeley.com/datasets/znxjncgjkc/2"
+    download_url: null
+    doi: null
+    geography: ["Dal Lake, Srinagar, Jammu and Kashmir, India"]
+    modality: "drone_rgb"
+    target: "floating_macroplastic"
+    annotation: ["polygon segmentation"]
+    reported_size: "Approximately 2,000 images (verify)"
+    licence_status: "verify"
+    licence: null
+    access: "landing_page_manual_download"
+    priority: 2
+    notes: "Check overlap with AquaPlasticWaste before combining datasets."
+  - id: iwhr_floater_v1
+    title: "IWHR_AI_Lable_Floater_V1"
+    provider: "Figshare"
+    landing_url: "https://doi.org/10.6084/m9.figshare.27376851.v1"
+    download_url: null
+    doi: "10.6084/m9.figshare.27376851.v1"
+    geography: ["Inland waters; exact site coverage to verify"]
+    modality: "shore_camera_rgb"
+    target: "floating_debris"
+    annotation: ["Pascal VOC XML bounding boxes"]
+    reported_size: "3,000 images; 23,692 objects (catalogue description; verify)"
+    licence_status: "verify"
+    licence: null
+    access: "landing_page_manual_download"
+    priority: 3
+    notes: "Check geographic coverage and label definitions before use as plastic-only data."
+  - id: risid
+    title: "River Surface Image Dataset (RiSID)"
+    provider: "Zenodo"
+    landing_url: "https://zenodo.org/records/16927238"
+    download_url: null
+    doi: "10.3389/feart.2024.1427132"
+    geography: ["Seven rivers in Japan"]
+    modality: "river_surface_rgb"
+    target: "floating_macroplastic"
+    annotation: ["COCO segmentation"]
+    reported_size: "7,356 images (catalogue description; verify)"
+    licence_status: "verify"
+    licence: null
+    access: "landing_page_manual_download"
+    priority: 4
+    notes: "Good external validation benchmark; not Indian imagery."
+  - id: floatwaste
+    title: "FloatWaste"
+    provider: "Hugging Face / Zenodo"
+    landing_url: "https://huggingface.co/datasets/OliviaWuYJ/sc-floatwaste"
+    alternate_url: "https://doi.org/10.5281/zenodo.21934286"
+    download_url: null
+    doi: "10.5281/zenodo.21934286"
+    geography: ["Hobart, Australia", "Sydney region, Australia", "Citarum basin, Indonesia"]
+    modality: "river_surface_rgb"
+    target: "floating_litter"
+    annotation: ["COCO bounding boxes"]
+    reported_size: "7,906 images; 27,583 boxes (catalogue description; verify)"
+    licence_status: "verify"
+    licence: null
+    access: "landing_page_manual_download"
+    priority: 5
+    notes: "Mixed litter categories; map source labels to plastic-specific classes only after inspecting annotation taxonomy."
+  - id: flow
+    title: "FloW / FloW-Img / FloW-RI"
+    provider: "ORCA-Uboat GitHub"
+    landing_url: "https://github.com/ORCA-Uboat/FloW-Dataset"
+    download_url: null
+    geography: ["Inland waters; exact site metadata to verify"]
+    modality: "rgb_and_radar"
+    target: "floating_waste"
+    annotation: ["dataset-specific"]
+    reported_size: "Access and exact split require provider verification"
+    licence_status: "verify"
+    licence: null
+    access: "application_or_manual"
+    priority: 6
+    notes: "Do not automate application-only access."
+  - id: sentinel2_river_plastic_reference
+    title: "River plastic hotspot detection from space — code"
+    provider: "GitHub"
+    landing_url: "https://github.com/AmbarJade/plastics-hotspots-identification"
+    download_url: null
+    geography: ["Citarum, Indonesia", "Motagua, Guatemala", "Odaw, Ghana"]
+    modality: "sentinel2_multispectral"
+    target: "river_surface_plastic_accumulation"
+    annotation: ["ROI / pixel classification; inspect paper and linked data"]
+    licence_status: "verify"
+    licence: null
+    access: "public_code_reference"
+    priority: 7
+    notes: "Code benchmark, not a self-contained labelled dataset; GEE assets may be author-specific."
+  - id: zenodo_lake_microplastics
+    title: "Data for Plastic debris in lakes and reservoirs"
+    provider: "Zenodo"
+    landing_url: "https://zenodo.org/records/7824882"
+    download_url: null
+    doi: "10.5281/zenodo.7824882"
+    geography: ["Global lakes and reservoirs"]
+    modality: "field_measurements"
+    target: "microplastic_occurrence_or_concentration"
+    annotation: ["CSV observations"]
+    reported_size: "Multiple CSV files plus HydroLAKES data (verify)"
+    licence_status: "CC-BY-4.0 listed on record; verify current record"
+    licence: "CC BY 4.0"
+    access: "landing_page_manual_download"
+    priority: 8
+    notes: "Microplastic measurements are not macroplastic image labels. Inspect Indian site coverage after download."
+  - id: cpcb_nwmp
+    title: "CPCB National Water Quality Monitoring Programme"
+    provider: "CPCB / NWIC"
+    landing_url: "https://nwdp.nwic.gov.in/"
+    download_url: null
+    geography: ["India; state and station coverage varies by file"]
+    modality: "water_quality_station_csv"
+    target: "environmental_context_not_plastic_label"
+    annotation: ["station/year water-quality measurements"]
+    licence_status: "verify"
+    licence: null
+    access: "portal_manual_download"
+    priority: 9
+    notes: "Acquire official state-specific files. Preserve original values and units; do not convert water-quality exceedance into plastic presence."
+  - id: cwc_surface_water
+    title: "CWC surface-water quality monitoring"
+    provider: "Central Water Commission / NWIC"
+    landing_url: "https://nwdp.nwic.gov.in/"
+    download_url: null
+    geography: ["India; station and parameter coverage varies"]
+    modality: "water_quality_station_csv"
+    target: "environmental_context_not_plastic_label"
+    annotation: ["station/time water-quality measurements"]
+    licence_status: "verify"
+    licence: null
+    access: "portal_manual_download"
+    priority: 10
+    notes: "Acquire official AP and Telangana resources. Check coordinates, station identifiers, dates and parameter units."
+  - id: cpcb_river_quality_github_mirror
+    title: "RiverWaterQualityDataset — CPCB-derived GitHub mirror"
+    provider: "GitHub user repository"
+    landing_url: "https://github.com/KunalLatkar/RiverWaterQualityDataset"
+    download_url: null
+    geography: ["India"]
+    modality: "water_quality_station_csv"
+    target: "environmental_context_not_plastic_label"
+    annotation: ["CSV; raw and preprocessed"]
+    licence_status: "repository MIT; underlying CPCB data terms require separate verification"
+    licence: "MIT for repository code only"
+    access: "public_repository"
+    priority: 11
+    notes: "Use raw file only for comparison; audit all preprocessing and confirm provenance against CPCB originals."
+  - id: global_plastic_watch
+    title: "Global Plastic Watch"
+    provider: "Minderoo Foundation"
+    landing_url: "https://www.globalplasticwatch.org/methodology"
+    download_url: null
+    geography: ["Selected global regions; API access subject to registration"]
+    modality: "satellite_derived_land_waste_sites"
+    target: "land_based_plastic_waste_aggregation"
+    annotation: ["validated site polygons / attributes subject to access"]
+    licence_status: "CC BY-NC 2.0 stated by provider; confirm API terms"
+    licence: "CC BY-NC 2.0"
+    access: "registration_required"
+    priority: 12
+    notes: "Land-based waste aggregations, not direct river-surface plastic detections."

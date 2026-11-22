@@ -1,0 +1,21 @@
+regions:
+  andhra_pradesh:
+    - "andhra pradesh"
+    - "andhra"
+    - "kolleru"
+    - "krishna"
+    - "godavari"
+    - "tungabhadra"
+    - "penna"
+    - "pennar"
+    - "anantapur"
+    - "ananthapuramu"
+    - "sri sathya sai"
+  telangana:
+    - "telangana"
+    - "musi"
+    - "hussain sagar"
+    - "hyderabad"
+    - "manjira"
+    - "godavari"
+    - "krishna"

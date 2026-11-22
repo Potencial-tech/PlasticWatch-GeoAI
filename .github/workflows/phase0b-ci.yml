@@ -1,0 +1,30 @@
+name: Phase 0B data-audit tests
+on:
+  push:
+    paths:
+      - "config/**"
+      - "src/**"
+      - "scripts/**"
+      - "tests/**"
+      - "requirements.txt"
+      - ".github/workflows/phase0b-ci.yml"
+  pull_request:
+    paths:
+      - "config/**"
+      - "src/**"
+      - "scripts/**"
+      - "tests/**"
+      - "requirements.txt"
+      - ".github/workflows/phase0b-ci.yml"
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install -r requirements.txt pytest
+      - run: python scripts/phase0b.py validate-registry
+      - run: pytest -q
+      - run: python scripts/phase0b.py audit

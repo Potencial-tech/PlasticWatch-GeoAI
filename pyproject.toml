@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "plasticwatch-phase0b"
+version = "0.1.0"
+description = "Dataset acquisition and audit tools for PlasticWatch GeoAI"
+requires-python = ">=3.10"
+dependencies = ["pandas>=2.1", "Pillow>=10.0", "PyYAML>=6.0", "requests>=2.31", "tqdm>=4.66"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
